@@ -38,7 +38,23 @@ const float_options = {
 
 float_heading.animate(float_keyframes, float_options);
 
+const unyo_heading = document.querySelector('#unyo_heading');
 
+const unyo_keyframes = {
+  borderRadius: [
+      '20% 50% 50% 70%/50% 50% 70% 50%',
+      '50% 20% 50% 50%/40% 40% 60% 60%',
+      '50% 40% 20% 40%/40% 50% 50% 80%',
+      '50% 50% 50% 20%/40% 40% 60% 60%',
+    ],
+};
+const unyo_options = {
+  duration: 8000,
+  direction: 'alternate',
+  iterations: Infinity,
+};
+
+unyo_heading.animate(unyo_keyframes, unyo_options);
 
 
 

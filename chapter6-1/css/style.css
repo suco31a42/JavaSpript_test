@@ -9,3 +9,10 @@ body {
   background-size: 200% 100%;
   padding: .5rem 1rem;
 }
+#unyo_heading {
+  background: #0bd;
+  color: #fff;
+  display: inline-block;
+  padding: 6rem 3rem;
+  border-radius: 50%;
+}
