@@ -1,3 +1,11 @@
 body {
   text-align: center;
 }
+#float_heading {
+  color: #fff;
+  display: inline-block;
+  /*背景水色 文字白色*/
+  background-image: linear-gradient(90deg, #0bd 50%, #fff 50%, #fff);
+  background-size: 200% 100%;
+  padding: .5rem 1rem;
+}
