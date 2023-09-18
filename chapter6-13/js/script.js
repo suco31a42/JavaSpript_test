@@ -1,14 +1,16 @@
-// 監視対象が範囲内に現れたら実行
-const imgClass = (entries) =>  {
-  const keyframs = {
+const showkirin = (entries) => {
+  const keyframes = {
     opacity: [0, 1],
+    // 画像を右から真ん中に移動させる
     translate: ['200px 0', 0],
   };
-  entries[0].target.animate(keyframs, 600);
+  // console.log(entries[0].target);
+  // 画像を指定してアニメーションをつける
+  entries[0].target.animate(keyframes, 600);
 };
 
 // 監視ロボットの設定
-const imgObserver = new IntersectionObserver(imgClass);
+const kirinObserver = new IntersectionObserver(showkirin);
 
 // 画像を監視するように指示
-imgObserver.observe(document.querySelector('#img-class'));
+kirinObserver.observe(document.querySelector('#kirin'));
