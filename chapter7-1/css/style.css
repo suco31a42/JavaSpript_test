@@ -1,0 +1,16 @@
+@charset 'UTF-8';
+
+.wrapper {
+  max-width: 38rem;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+#loading {
+  background-color: var(--light-grey);
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-item: center;
+}
