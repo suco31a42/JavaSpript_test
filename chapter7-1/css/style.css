@@ -40,6 +40,10 @@ img {
   transition: .4s;
 }
 
+.fadein {
+  opacity: 0;
+}
+
 .wrapper {
   max-width: 38rem;
   margin: auto;
@@ -70,7 +74,8 @@ img {
   font-size: max(12vw, 3rem);
   line-height: 1.2;
 }
-
+/*Loading*/
+/*グレーのスクリーン*/
 #loading {
   background-color: var(--light-grey);
   position: fixed;
@@ -78,4 +83,17 @@ img {
   z-index: 9999;
   display: grid;
   place-item: center;
+}
+/*グリーンのスクリーン*/
+#loading-screen {
+  background-color: var(--light-green);
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  translate: 0 100vh;
+}
+
+#loading p {
+  font-size: 2rem;
+  font-family: var(--oswald-font);
 }
