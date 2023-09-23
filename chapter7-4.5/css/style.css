@@ -1,0 +1,22 @@
+#loading {
+  background: rgba(238, 221, 136, 1);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+}
+
+h1, h2, p {
+  margin-bottom: 1rem;
+}
+
+h2 {
+  margin-top: 2rem;
+}
