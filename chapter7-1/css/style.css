@@ -1,35 +1,31 @@
-
 @charset 'UTF-8';
 
 :root {
   --light-green: #d5edeb;
   --green: #63dbd0;
   --brown: #403632;
-  --light-grey: #eee;
+  --light-gray: #eee;
   --white: #fff;
   --oswald-font: 'Oswald', sans-serif;
 }
-
+/*===============================================*/
 body {
   color: ver(--brown);
   background: url('https://assets.codepen.io/85188/bg-shadow.jpg') no-repeat right bottom / cover fixed;
   text-align: center;
 }
-
+/*===================================================*/
 p {
   line-height: 1.7;
 }
-
 img {
   max-width: 100%;
 }
-
 .title {
   font-family: var(--oswald-font);
   font-size: min(10vw, 4rem);
   margin-bottom: 2rem;
 }
-
 .btn {
   color: var(--white);
   background: var(--brown);
@@ -41,41 +37,14 @@ img {
   transition: .4s;
 }
 
-.fadein {
-  opacity: 0;
-}
-
+/*========================================================*/
 .wrapper {
   max-width: 38rem;
   margin: auto;
   padding: 0 1rem;
 }
-
-.hero {
-  height: 100vh;
-  position: relative;
-}
-
-.hero::after {
-  content: '';
-  width: 50%;
-  height: 100%;
-  background: url('https://assets.codepen.io/85188/bg-hero.jpg') no-repeat center / cover;
-  position: absolute;
-  inset: 0;
-}
-
-.hero .title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  z-index: 2;
-  width: 100%;
-  font-size: max(12vw, 3rem);
-  line-height: 1.2;
-}
-/*Loading*/
+/*ローディング
+==================================================*/
 /*グレーのスクリーン*/
 #loading {
   background-color: var(--light-grey);
@@ -97,4 +66,178 @@ img {
 #loading p {
   font-size: 2rem;
   font-family: var(--oswald-font);
+}
+
+/*HERO
+=========================================================*/
+
+.hero {
+  height: 100vh;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  width: 50%;
+  height: 100vh;
+  background: url('https://assets.codepen.io/85188/bg-hero.jpg') no-repeat center / cover;
+  position: absolute;
+  inset: 0;
+}
+
+.hero .title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 2;
+  width: 100%;
+  font-size: max(12vw, 3rem);
+  line-height: 1.2;
+}
+/*コンセプト
+=======================================================*/
+.concept {
+  margin: 8rem 0;
+  background-image: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent 20%,
+    var(--light-grey) 20%,
+    var(--light-grey) 100%
+  );
+}
+.concept p {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+/*画像ギャラリー
+=======================================================*/
+.gallery {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.gallery-image {
+  width: min(100%, calc(38rem - 2rem));
+  margin: auto;
+  position: relative;
+}
+.gallery-image::after {
+  display: block;
+  content: '';/*afterまたはbeforeを使う時に入れる。テキストや画像を指定することが出来る*/
+  width: calc(100% - 2rem);/*横の線の大きさ*/
+  height: calc(100% - 2.5rem);/*縦の線の大きさ*/
+  z-index: 3; /*位置指定*/
+  border: 3px solid var(--white);
+  top: 1rem;
+  left: 1rem;
+  position: absolute;
+}
+
+.gallery-image img {
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  width: 100%;
+}
+
+.gallery-thumbnails {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(5, 1fr);
+  list-style: none;
+  margin: 1rem 0;
+}
+
+.gallery-thumbnails img {
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  cursor: pointer; /*カーソルポインタの状態を変える*/
+}
+
+/*ショップのお知らせ
+=======================================*/
+.shop {
+  background: url('https://assets.codepen.io/85188/bg-shop.jpg') no-repeat center top / cover;
+  margin-top:  16rem;
+  position: relative;
+  height: 40rem;
+}
+.shop-content {
+  background: var(--white);
+  padding: 3rem;
+  position: absolute;
+  top: -8rem;
+  width: 90vw;
+  left: 0;
+  right: 0;
+}
+.shop h3 {
+  margin: 1rem 0;
+  padding-top: 2rem;
+  font-weight: normal;
+  border-top: 1px solid var(--light-gray);
+}
+
+/*レスポンシブ(デスクトップサイズ)
+===================================================*/
+@media (min-width: 800px) {
+  .title {
+    margin-bottom: 3rem;
+  }
+  .btn:hover {
+    color: var(--brown);
+    background: var(--light-green);
+  }
+  /*スライドメニュー*/
+  .btn-menu:hover {
+    background-color: var(--light-green);
+  }
+  #menu-close:hover svg {
+    fill: var(--brown);
+  }
+  .menu-list a:hover {
+    transition: .4s;
+    color: var(--green);
+  }
+  /*コンセプト*/
+  .concept {
+    display: flex;
+    margin: 16rem 0;
+  }
+  .concept p {
+    text-align-last: left; /*ブロックの最後の行の位置*/
+  }
+  .concept img {
+    margin: -6rem 0;
+    max-width: 38rem;
+  }
+  /*ギャラリー*/
+  .gallery {
+    flex-direction: row;
+  }
+  .gallery-image {
+    width: 50vw;
+    margin: 0;
+  }
+  .gallery-image img {
+    height: 100vh;
+  }
+  .gallery-content {
+    width: 30vw;
+  }
+  .gallery-thumbnails {
+    gap: 2vw;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .gallery-thumbnails img:hover {
+    box-shadow: 0 0 1rem rgba(0,0,0,.4);
+    transition: .4s;
+  }
+  /*ショップ*/
+  .shop {
+    margin-top: 20rem;
+    height: 50rem;
+  }
 }
