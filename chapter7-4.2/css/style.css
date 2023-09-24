@@ -1,0 +1,31 @@
+#loading-left,
+#loading-right {
+  background: #ed8;
+  position: fixed;
+  width: 50vh;
+  height: 100vh;
+}
+
+#loading-left {
+  left: 0;
+  transform-origin: left top;
+}
+
+#loading-right {
+  right: 0;
+  transform-origin: right top;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+}
+
+h1, h2, p {
+  margin-bottom: 1rem;
+}
+
+h2 {
+  margin-top: 2rem;
+}
